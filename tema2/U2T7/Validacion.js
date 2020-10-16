@@ -9,10 +9,6 @@ function rightLetter(num){
         console.log("La letra del NIF es incorrecta. Seleccionar la letra "+(String.charAt(aux)));
     }
 }
-
-
-
-
 function rightLength(num){
     var length=num.toString().length;
     if(length>8 ){
