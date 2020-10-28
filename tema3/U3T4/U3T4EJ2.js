@@ -30,7 +30,8 @@ if(format.test(info)==true){
 
 
 
-
+let tryxd= prompt("Try now");
+let formateo=/[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~0123456790abcdefghijklmnopqrstuvwxyzABCDEFGHIJLMNOPQRSTUVWXYZ]/.test(tryxd) ? true:false;
 
 
 
