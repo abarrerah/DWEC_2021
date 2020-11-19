@@ -61,6 +61,7 @@ for(let i=0;i<10;i++){
     let dateEnd=new Date('August 20, 2020 12:10:25');
     fly1.addProperties(dateStart,dateEnd,55);
     air.airport(fly1);
+    
 }
 air.showInfo();
 
