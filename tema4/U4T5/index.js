@@ -1,36 +1,72 @@
-document.getElementById("button").addEventListener('click',init,false);
 
-function init() {
-  dateValidation();
+const regexFecha = /^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$/
+const regexCocinero = /^([A-Z]{2})([#@$]?)([0-9]{4})$/
+const regexDestinatario = /^([A-Z]{2,3})(_?)([a-z]+)(:?)([0-9]{4})$/
+const regexGramos = /(5000)|(^[1-4]+[0-9]{3})|(^[1-9]+[0-9]{2})/
+const regexComposicion = /^([0-9]+)(g?)([A-Z]{1,2}[0-9]{0,1}){2}$/
+const regexNumCuenta = /^([a-z]{2})([0-9]{2})(-?)([0-9]{12})(-?)([0-9]{2})/;
 
+let validaFecha = () => {
+    let fecha = document.getElementById('fecha').value;
+    if(regexFecha.test(fecha)) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
-dateValidation=()=>{
-  const date_regex= /(?:0[1-9]|[12][0-9]|3[01])\/(?:0[1-9]|1[0-2])\/(?:19|20\d{2})/;
-  if(date_regex.test(document.getElementById("fecha").value)){
-    alert("YES!");
-  }
-  else{
-    alert("Nope");
-  }
+let validaCocinero = () => {
+    let cocinero = document.getElementById('cocinero').value;
+    if(regexCocinero.test(cocinero)) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
-chefValidation=()=>{
-  const chef_regex=/(^[A-z]{2})[!@#\$%]?([0-9]{4})$/
+let validaDestinatario = () => {
+    let destinatario = document.getElementById('destinatario').value;
+    if(regexDestinatario.test(destinatario)) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
-destinationValidation=()=>{
-  const dest_regex=/((^[A-Z]{2,3})(_)([a-z]+)(:)([0-9]{4})$)$/;
+let validaGramos = () => {
+    let gramos = document.getElementById('gramos').value;
+    if(regexGramos.test(gramos)) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
-gramsValidations=()=>{
-  const grams_regex=/^([1-9][0-9][0-9])$|^([1-4][0-9][0-9][0-9])$|5000/
+let validaComposicion = () => {
+    let composicion = document.getElementById('composicion').value;
+    if(regexComposicion.test(composicion)) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
-compValidation=()=>{
-  const comps_regex=/(((^[0-9][1-9][1-9]|^[1-4][0-9][0-9][0-9]|[5000])([g]|[G])(([a-zZ-h]{1,2})+([0-9]*)){2}$))$/
+let validaNumCuenta = () => {
+    let numCuenta = document.getElementById('cuenta').value;
+    if (regexNumCuenta.test(numCuenta)) {
+
+        return true;
+    } else {
+        alert("fallo aquí");
+        return false;
+    }
 }
 
-usaValidations=()=>{
-  const usa_regex=/(^([a-zA-Z]{2}?)(([1-9]{2})|[0-9][1-9])(-)([0-9]{12})(-)([0-9]{2}))$/
+let validar = () => {
+    if (validaFecha() && validaCocinero() && validaDestinatario() && validaGramos() && validaComposicion() && validaNumCuenta()) {
+        document.getElementById('valid').style.display = "block";
+    } else {
+        document.getElementById('invalid').style.display = "block";
+    }
 }
+document.getElementById("submit").addEventListener("click", validar, false);
