@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <form action="">
+        Nombre: <input type="text" id="nombre" >
+        <br>
+        <br>
+        Año: <input type="text" id="year"  >
+        <br>
+        <br>
+        Habilidades: <input type="text" id="habilidades" >
+        <br>
+        <br>
+        Tirada para herir: <input type="text" id="tirada" >
+        <br>
+        <br>
+        Rol:<select name="roles" id="roles" >
+            <option value="0" selected="selected">Seleccione Rol</option>
+            <option value="Leader">Leader</option>
+            <option value="Combat">Combat</option>
+            <option value="Comunication">Comunication</option>
+            <option value="Demolition">Demolition</option>
+            <option value="Fanatic">Fanatic</option>
+          </select>
+        </option>
+        <br>
+        <br>
+        Contraseña: <input type="password" name="" id="password" required>
+        <br>
+        <br>
+        <input type="reset" name="limpiar" id="button" value="Limpiar">
+        <input type="submit" name="enviar" id="enviar" value="Enviar">
+        <br>
+        <br>
+    </form>
+    <div id="errores">
+        errores:
+    </div>
+    <div id="lastShot">
+        Tirada: 
+    </div>
+</body>
+</html>
