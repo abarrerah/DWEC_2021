@@ -5,60 +5,59 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Hola mundo con AJAX mejorado</title>
 		<script>
-			let READY_STATE_UNINITIALIZED = 0;
-			let READY_STATE_LOADING = 1;
-			let READY_STATE_LOADED = 2;
-			let READY_STATE_INTERACTIVE = 3;
-			let READY_STATE_COMPLETE = 4;
+         let READY_STATE_UNINITIALIZED = 0;
+let READY_STATE_LOADING = 1;
+let READY_STATE_LOADED = 2;
+let READY_STATE_INTERACTIVE = 3;
+let READY_STATE_COMPLETE = 4;
 
-			let peticion_http;
+let peticion_http;
 
-			function cargaContenido(url, metodo, funcion) {
-				peticion_http = inicializa_xhr();
+function cargaContenido(url, metodo, funcion) {
+    peticion_http = inicializa_xhr();
 
-				if (peticion_http) {
-					peticion_http.onreadystatechange = funcion;
-					peticion_http.open(metodo, url, true);
-					peticion_http.send(null);
-				}
-			}
+    if (peticion_http) {
+        peticion_http.onreadystatechange = funcion;
+        peticion_http.open(metodo, url, true);
+        peticion_http.send(null);
+    }
+}
 
-			function inicializa_xhr() {
-				if (window.XMLHttpRequest) {
-					return new XMLHttpRequest();
-				} else if (window.ActiveXObject) {
-					return new ActiveXObject("Microsoft.XMLHTTP");
-				}
-			}
+function inicializa_xhr() {
+    if (window.XMLHttpRequest) {
+        return new XMLHttpRequest();
+    } else if (window.ActiveXObject) {
+        return new ActiveXObject("Microsoft.XMLHTTP");
+    }
+}
 
-			function muestraContenido() {
-				if (peticion_http.readyState === READY_STATE_COMPLETE) {
-					if (peticion_http.status === 200) {
-						alert(peticion_http.responseText);
-					}
-				}
-			}
+function muestraContenido() {
+    if (peticion_http.readyState === READY_STATE_COMPLETE) {
+        if (peticion_http.status === 200) {
+            document.getElementById("textarea1").value = peticion_http.responseText;
+        }
+    }
+}
 
-			function descargaArchivo() {
-				cargaContenido("http://localhost:8090/tema6/U6T1/holamundo.txt", "GET", muestraContenido);
-			}
+function descargaArchivo() {
+    cargaContenido("http://localhost:8090/U6T1/holamundo.txt", "GET", muestraContenido);
+}
 
-			window.onload = descargaArchivo;
+document.getElementById("input1").value = window.location.href;
+
+function mostrarContenido() {
+
+    let input1 = document.getElementById("input1").value;
+
+    cargaContenido(input1, "GET", muestraContenido);
+
+}
         </script>
-        <script src="U6T1EJ1.js" defer></script>
-	</head>
-	<body>
-        <label for="">URL:</label>
-        <input type="text" name="" id="text">
+<body>
+        <input type="text" id="url">
         <br>
+        <textarea name="" id="textarea" cols="30" rows="10"></textarea>
         <br>
-        <button>Mostrar contenido</button>
-        <label for=""></label>
-        <br>
-        <br>
-        <textarea id="textarea" name="textarea" >
-            
-            </textarea>
-
+        <button type="button" id="boton">Mostrar contenido</button>
     </body>
 </html>

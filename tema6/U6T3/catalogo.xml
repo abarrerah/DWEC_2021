@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATALOG>
+  <serie>
+    <title>Game of Throne</title>
+    <tv>HBO</tv>
+    <director>Abraham</director>
+    <year>2011</year>
+    <ended>si</ended>
+  </serie>
+  <serie>
+    <title>Breaking bad</title>
+    <tv>Netflix</tv>
+    <director>Abraham</director>
+    <year>2006</year>
+    <ended>si</ended>
+  </serie>
+  <serie>
+    <title>Reina de gambito</title>
+    <tv>Netflix</tv>
+    <director>Abraham</director>
+    <year>2020</year>
+    <ended>si</ended>
+  </serie>
+</CATALOG>
