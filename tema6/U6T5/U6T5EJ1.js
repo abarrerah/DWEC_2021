@@ -6,6 +6,7 @@ function inicio() {
 }
 
 function mostrar() {
+  console.log("FUNCIONA MARIBEL");
   let title = document.getElementById("Title").value;
   let director = document.getElementById("Director").value;
   let channel = document.getElementById("Channel").value;
@@ -33,7 +34,7 @@ function mostrar() {
           }
           document.getElementById("texto").innerHTML= txt;
 
-          window.localStorage.href="https://www.youtube.com/watch?v=8OaCcw_0LIw";
+  
       }
   };
   let parametros= JSON.stringify(object);
