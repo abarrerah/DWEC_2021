@@ -33,7 +33,7 @@ function mostrar() {
           }
           document.getElementById("texto").innerHTML= txt;
 
-          window.localStorage.href="https://www.youtube.com/watch?v=a61MNL-Vo9U";
+          window.localStorage.href="https://www.youtube.com/watch?v=8OaCcw_0LIw";
       }
   };
   let parametros= JSON.stringify(object);
