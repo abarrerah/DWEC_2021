@@ -6,28 +6,18 @@ function inicio() {
 }
 
 function mostrar() {
-  document.getElementById("mostrar").addEventListener("click", mostrar);
-}
-
-function mostrar() {
   let title = document.getElementById("Title").value;
   let director = document.getElementById("Director").value;
   let channel = document.getElementById("Channel").value;
   let year = parseInt(document.getElementById("Year").value);
   let end = document.getElementById("Ended").checked;
-  let valueEnd="";
-    if(end==true){
-        valueEnd="SI";
-    }else{
-        valueEnd="NO";
-    }
 
   let object = {
     titulo: title,
     director: director,
     cadena: channel,
     anyo: year,
-    terminada: valueEnd,
+    terminada: end,
   };
 
   let xhr= new XMLHttpRequest();
@@ -42,6 +32,8 @@ function mostrar() {
             txt += array[x].titulo+" : "+array[x].director+" : "+array[x].cadena+ " : "+array[x].anyo+" : "+array[x].year+" : "+array[x].terminada;
           }
           document.getElementById("texto").innerHTML= txt;
+
+          window.localStorage.href="https://www.youtube.com/watch?v=a61MNL-Vo9U";
       }
   };
   let parametros= JSON.stringify(object);
