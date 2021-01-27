@@ -22,17 +22,14 @@ function mostrar() {
   };
 
   let xhr= new XMLHttpRequest();
-  let txt="";
 
   xhr.onreadystatechange= function(){
       if(this.readyState==4 && this.status== 200){
           console.log(this.responseText);
           let array=JSON.parse(this.responseText);
 
-          for(x in array){
-            txt += array[x].titulo+" : "+array[x].director+" : "+array[x].cadena+ " : "+array[x].anyo+" : "+array[x].year+" : "+array[x].terminada;
-          }
-          document.getElementById("texto").innerHTML= txt;
+          
+          document.getElementById("texto").innerHTML= array;
 
   
       }
