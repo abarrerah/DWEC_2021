@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="U6T5EJ1.js" defer></script>
+</head>
+<body>
+    <form action="/create_serie.php" method="post">
+        <label for="Title">Title:</label>
+        <br>
+        <input type="text" name="Title" id="Title" value="Nombre de la serie">
+        <br>
+        <label for="Director">Director:</label>
+        <br>
+        <input type="text" name="Director" id="Director" value="Nombre del director">
+        <br>
+        <label for="Channel">Channel:</label>
+        <br>
+        <input type="text" name="Channel" id="Channel" value="Nombre de la cadena">
+        <br>
+        <label for="Year">Year:</label>
+        <br>
+        <input type="number" name="Year" id="Year" value="2000">
+        <br>
+        <label for="Ended">Ended?</label>
+
+        <input type="checkbox" name="Ended" id="Ended" checked>
+        <br> 
+        <button id="mostrar">Enviar</button>
+    </form>
+    <div id="mostrar"></div>
+    <div id="texto" />
+</body>
+</html>
