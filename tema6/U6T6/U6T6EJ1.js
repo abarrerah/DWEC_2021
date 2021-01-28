@@ -5,26 +5,24 @@ function inicio() {
   document.getElementById("Enviar").addEventListener("click", send);
 }
 function mostrar() {
-  console.log("buenos días");
   fetch("http://localhost:8090/tema6/U6T6/listar_series.php")
     .then((response) => response.json())
     .then((data) => {
         let alumnos = JSON.parse(JSON.stringify(data));
         let series="<table><tr><th>Title</th><th>Channel</th><th>Director</th><th>Year</th><th>Ended</th></tr></table>"
-
-        for(let i=0; i<alumnos.length; i++){
+        for (const value of alumnos) {
             series+="<tr><td>";
-            series+=alumnos[i].titulo;
+            series+=value.titulo;
             series+="</td><td>";
-            series+=alumnos[i].director;
+            series+=value.director;
             series+="</td><td>";
-            series+=alumnos[i].cadena;
+            series+=value.cadena;
             series+="</td><td>";
-            series+=alumnos[i].anyo;
+            series+=value.anyo;
             series+="</td><td>";
-            series+=alumnos[i].terminada;
+            series+=value.terminada;
             series+="</td></tr>";
-        }
+          }
         series+="</table>";
         document.getElementById("mostrar").innerHTML=series;
     })
