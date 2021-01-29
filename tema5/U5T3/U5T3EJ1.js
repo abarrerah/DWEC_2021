@@ -1,46 +1,55 @@
-window.addEventListener("load",init);
-
-
-function init(){
-
-
+window.addEventListener('load', () => {
+        let body = document.querySelector('body');
+        let form = document.createElement('form');
+        body.appendChild(form);
     
-        let input=document.createElement("input");
-        input.type="text";
-        
-        let t=document.createElement("LABEL");
-        let x=document.createTextNode("Nombre del disco: ");
-        t.setAttribute("for","maruja");
-        t.appendChild(x);
-        document.body.appendChild(t);
-        document.body.appendChild(input);
-        let br=document.createElement("br");
-        document.body.appendChild(br);
-        let br2=document.createElement("br");
-        document.body.appendChild(br2);
-
-        let input2=document.createElement("input");
-        input2.type="text";
-        let tt=document.createElement("LABEL");
-        let xx=document.createTextNode("Grupo de música: ");
-        tt.setAttribute("for","maruja");
-        tt.appendChild(xx);
-        document.body.appendChild(tt);
-        document.body.appendChild(input2);
-        let br3=document.createElement("br");
-        document.body.appendChild(br3);
-        let br4=document.createElement("br");
-        document.body.appendChild(br4);
-
-        let input3=document.createElement("input");
-        input3.type="date";
-        let ttt=document.createElement("LABEL");
-        let xxx=document.createTextNode("fecha de lanzamiento: ");
-
-        ttt.setAttribute("for","maruja");
-        ttt.appendChild(xxx);
-        document.body.appendChild(ttt);
-        document.body.appendChild(input3);
-
-
-}
+        let arrayAux = ["Nombre del disco: ", "Grupo/artista: ", "Año de publicacion: ", "Tipo de musica: ", "Localizacion: ", "Prestado: "];
+        let arrayOpt = ["Rock", "Pop", "Punk", "Indie"];
+    
+        for(let i = 0; i < 6; i++) {
+            if (i == 2) {
+                let label = document.createElement('label');
+                let text = document.createTextNode(arrayAux[i]);
+                label.appendChild(text);
+                let select = document.createElement('select');
+                select.setAttribute('name', "tipo")
+                form.appendChild(label);
+                form.appendChild(select);
+                for (let j = 0; j < 4; j++) {
+                    let option = document.createElement('option');
+                    option.setAttribute('value', arrayOpt[j]);
+                    let optText = document.createTextNode(arrayOpt[j]);
+                    option.appendChild(optText);
+                    select.appendChild(option);
+                }
+                let br = document.createElement('br');
+                form.appendChild(br);
+    
+            } else if (i == 5) {
+                let label = document.createElement('label');
+                let text = document.createTextNode(arrayAux[i]);
+                label.appendChild(text);
+                let input = document.createElement('input');
+                input.setAttribute('type', 'checkbox');
+                let br = document.createElement('br');
+                form.appendChild(label);
+                form.appendChild(input);
+                form.appendChild(br);
+            } else {
+                let label = document.createElement('label');
+                let text = document.createTextNode(arrayAux[i]);
+                label.appendChild(text);
+                let input = document.createElement('input');
+                input.setAttribute('type', 'text');
+                let br = document.createElement('br');
+                form.appendChild(label);
+                form.appendChild(input);
+                form.appendChild(br);
+            }
+        }
+        let input = document.createElement('input');
+        input.setAttribute('type', 'submit')
+        let text = document.createTextNode("Enviar");
+        input.appendChild(text);
+        form.appendChild(input);
+    });

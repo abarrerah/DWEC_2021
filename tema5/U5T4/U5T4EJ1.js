@@ -1,86 +1,101 @@
-window.addEventListener("load",init);
-
-function init() {
-    document.getElementById('texto').addEventListener("click",crearTexto);
-    document.getElementById('pass').addEventListener("click",crearPass);
-    document.getElementById('area').addEventListener("click",crearArea);
-    document.getElementById('label').addEventListener("click",crearLabel);
-}
-
-function crearTexto() {
-    let info=prompt("Dime el nombre del atributo name");
-
-    for(let i =0; i <2; i++){
-
-        let br=document.createElement("br");
+document.getElementById("btn1").addEventListener("click", () => {
+    let input = document.createElement('input');
+    input.setAttribute("type", "text");
+    let name = prompt("De un valor al atributo name");
+    if(name != null) {
+        input.setAttribute("name", name);
+        document.body.appendChild(input);
+        let br = document.createElement('br');
         document.body.appendChild(br);
-    } 
-    let input=document.createElement("input");
-    input.type="text";
-    input.setAttribute("name",info);
-    document.body.appendChild(input);
+    }
+});
 
-    for(let i =0; i <2; i++){
-
-        let br=document.createElement("br");
+document.getElementById("btn2").addEventListener("click", () => {
+    let input = document.createElement('input');
+    input.setAttribute("type", "password");
+    let name = prompt("De un valor al atributo name");
+    if (name != null) {
+        input.setAttribute("name", name);
+        document.body.appendChild(input);
+        let br = document.createElement('br');
         document.body.appendChild(br);
-    } 
+    }
+});
 
-}
-
-function crearPass(){
-
-    let info=prompt("Dime el nombre del atributo name");
-
-    for(let i =0; i <2; i++){
-
-        let br=document.createElement("br");
+document.getElementById("btn3").addEventListener("click", () => {
+    let input = document.createElement('textarea');
+    input.setAttribute("cols", "40");
+    input.setAttribute("rows", "5");
+    let name = prompt("De un valor al atributo name");
+    if (name != null) {
+        input.setAttribute("name", name);
+        document.body.appendChild(input);
+        let br = document.createElement('br');
         document.body.appendChild(br);
-    } 
-    let input=document.createElement("input");
-    input.type="password";
-    input.setAttribute("name",info);
-    document.body.appendChild(input);
+    }
+});
 
-    for(let i =0; i <2; i++){
+document.getElementById("btn4").addEventListener("click", () => {
+    let input = document.createElement('label');
+    let name = prompt("De valor al label");
+    let text = document.createTextNode(name);
+    name = prompt("De un valor al atributo for");
+    if (name != null) {
+        input.setAttribute("for", name);
+        input.appendChild(text);
+        document.body.appendChild(input);
+    }
+});
 
-        let br=document.createElement("br");
+document.getElementById("btn5").addEventListener("click", () => {
+    let input = document.createElement('img');
+    let name = prompt("De un valor al atributo src");
+    if (name != null) {
+        input.setAttribute("src", name);
+        document.body.appendChild(input);
+        let br = document.createElement('br');
         document.body.appendChild(br);
-    } 
+    }
+});
 
-}
-
-function crearArea(){
-
-    let info=prompt("Dime el nombre del atributo name");
-
-    for(let i =0; i <2; i++){
-
-        let br=document.createElement("br");
+document.getElementById("btn6").addEventListener("click", () => {
+    let input = document.createElement('input');
+    input.setAttribute("type","checkbox")
+    let name = prompt("De un valor al atributo name");
+    let value = prompt("De un valor al atributo value");
+    if (name != null || value != null) {
+        input.setAttribute("name", name);
+        input.setAttribute("value", value);
+        document.body.appendChild(input);
+        let br = document.createElement('br');
         document.body.appendChild(br);
-    } 
-    let input = document.createElement("input");
-    input.type="area";
-    input.setAttribute("name",info);
-    input.setAttribute("rows","5");
-    input.setAttribute("cols","40");
-    document.body.appendChild(input);
+    }
+});
 
-    for(let i =0; i <2; i++){
-
-        let br=document.createElement("br");
+document.getElementById("btn7").addEventListener("click", () => {
+    let input = document.createElement('input');
+    input.setAttribute("type","radio")
+    let name = prompt("De un valor al atributo name");
+    let value = prompt("De un valor al atributo value");
+    if (name != null || value != null) {
+        input.setAttribute("name", name);
+        input.setAttribute("value", value);
+        document.body.appendChild(input);
+        let br = document.createElement('br');
         document.body.appendChild(br);
-    } 
-}
+    }
+});
 
-function crearLabel(){
-
-    let info=prompt("Dime el que  contenido quieres para el  label");
-    let info2=prompt("Dime a cual input lo quieres")
-
-    let t=document.createElement("LABEL");
-    let x=document.createTextNode(info);
-    t.setAttribute("for",info2);
-    t.appendChild(x);
-
-}
+document.getElementById("btn7").addEventListener("click", () => {
+    let input = document.createElement('input');
+    input.setAttribute("type","submit")
+    let name = prompt("De un valor al atributo name");
+    let value = prompt("De un valor al atributo value");
+    if (name != null || value != null) {
+        input.setAttribute("name", name);
+        input.setAttribute("value", value);
+        document.body.appendChild(input);
+        let br = document.createElement('br');
+        document.body.appendChild(br);
+    }
+});
