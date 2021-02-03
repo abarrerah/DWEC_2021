@@ -45,6 +45,20 @@ function cargarJSON(JSONData){
             bando+=JSONData[i].imagen;
             bando+="'></td>";
             bando+="<td>"+JSONData[i].bando+" (EJE)</td></tr>";
+        }else if(sideSelected=="nada"){
+            bando+="<tr>";
+
+            bando+="<td>";
+            bando+=JSONData[i].nombre;
+            bando+="</td><td>";
+            bando+=JSONData[i].descripcion;
+            bando+="</td>";
+            bando+="<td><img src='armas/";
+            bando+=JSONData[i].imagen;
+            bando+="'></td>";
+            bando+="<td>";
+            bando+=JSONData[i].bando;
+            bando+="</td></tr>";
         }
         
     }
@@ -92,6 +106,21 @@ function fetch2(){
                 bando+="<td>";
                 bando+=value.bando;
                 bando+="(EJE)</td></tr>";
+
+            }else if(sideSelected=="nada"){
+                bando+="<tr>";
+    
+                bando+="<td>";
+                bando+=value.nombre;
+                bando+="</td><td>";
+                bando+=value.descripcion;
+                bando+="</td>";
+                bando+="<td><img src='armas/";
+                bando+=value.imagen;
+                bando+="'></td>";
+                bando+="<td>";
+                bando+=value.bando;
+                bando+="</td></tr>";
             }
             
           }
