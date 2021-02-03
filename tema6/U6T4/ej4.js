@@ -6,7 +6,7 @@ function iniciar(){
         if (this.readyState == 4 && this.status == 200){
             let info=JSON.parse(this.responseText);
             let finalInfo=cargarJSON(info);
-            document.getElementById("parrafo").innerHTML+=finalInfo;
+            document.getElementById("ms").innerHTML+=finalInfo;
         }
     }
     xhr.open("GET", "datosjson.php", true);
@@ -18,6 +18,7 @@ function cargarJSON(JSONData){
     let table="<table>";
     table+="<tr><th>TITULO</th><th>CADENA</th><th>DIRECTOR</th><th>ANYO</th><th>TERMINADA</th></tr>";
     let cata=JSONData.CATALOG;
+    console.log(cata);
 
     for(let i=0; i<cata.length; i++){
         table+="<td><td>"+JSONData.CATALOG[i].TITULO+"</td>";
