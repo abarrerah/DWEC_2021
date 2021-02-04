@@ -109,7 +109,6 @@ function fetch2(){
 
             }else if(sideSelected=="nada"){
                 bando+="<tr>";
-    
                 bando+="<td>";
                 bando+=value.nombre;
                 bando+="</td><td>";

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="examenU6.js" defer></script>
+    <style>
+        table,th,td,tr{
+            border:1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <label for="">CC.AA:</label>
+
+    <select id="Select">
+        <option value="" selected="selected"></option>
+    </select>
+    <br>
+    <br>
+    <label>D.Entregadas:</label>
+    <input type="number" name="" id="entregadas">
+    <br>
+    <br>
+    <label>D.Admin.:</label>
+    <input type="number" name="" id="administradas">
+    <br>
+    <br>
+    <label>D. Puata Completada:</label>
+    <input type="number" name="" id="pCompletadas">
+    <br>
+    <br>
+    <label>Porcentaje entregadas:</label>
+    <input type="number" name="" id="pEntregadas">
+    <br>
+    <br>
+    <label>Porcentaje Población administrada:</label>
+    <input type="number" name="" id="ppa">
+    <br>
+    <br>
+    <label>Porcentaje Población Completas:</label>
+    <input type="number" name="" id="ppc">
+    <br>
+    <br>
+    <input type="submit" value="Modificar datos" id="modify">
+    <hr>
+    <div>Resultados</div>
+    <div id="mostrar"></div>
+    <hr>
+    <h1>Tabla de Vacunación</h1>
+    <input type="submit" value="Cargar datos vacunación (XMLHttpRequest)" id="xmlButton">
+    <input type="submit" value="Cargar datos vacunación (Fetch)" id="fetchButton">
+    <br>
+    <br>
+    <br>
+   
+    <div id="table"></div>
+</body>
+</html>
