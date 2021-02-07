@@ -26,28 +26,37 @@ document.getElementById('save').addEventListener("click", ()=>{
     }
 
     document.getElementById('refresh').addEventListener("click" ,()=>{
+        
         if(selectedOption=="Local"){
+
             document.getElementById('LocalArea').innerHTML=info;
 
         }else if(selectedOption=="session"){
+
             document.getElementById('SessionArea').innerHTML=info;
         }
         
     });
 
     document.getElementById('delete').addEventListener("click" ,()=>{
+        
         document.getElementById('key').value="";
         document.getElementById('value').value="";
+
         document.getElementById('LocalArea').innerHTML="";
         document.getElementById('SessionArea').innerHTML="";
     });
 
     document.getElementById('compatibility').addEventListener("click",()=>{
+
         if(typeof(Storage) !== "undefined") {
-            // Code for localStorage/sessionStorage.
+
             document.getElementById('mostrar').innerHTML = "Tu navegador es compatible con el LocalStorage y SessionStorage.";
+
         } else {
+
             document.getElementById('mostrar').innerHTML = "Tu navegador no es compatible con el LocalStorage y SessionStorage.";
+
         }
     });
 });
