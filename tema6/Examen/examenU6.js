@@ -4,6 +4,8 @@ document.getElementById("fetchButton").addEventListener("click", showByFetch);
 
 document.getElementById('modify').addEventListener('click',modifyData);
 
+let objectArray=[]
+
 function modifyData(){
     let selected = document.getElementById('Select');
     let ccaaSelected=selected.options[selected.selectedIndex].value;
@@ -18,7 +20,7 @@ function modifyData(){
       };
       console.log(object);
       fetch('actualizar_comunidad.php',{
-          method:'POST',
+          method:'PUT',
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
         },
@@ -36,7 +38,7 @@ function modifyData(){
     });
     document.getElementById('mostrar').innerHTML="CCAA actualizada";
 }
-let objectArray=[]
+
 
 function sendData(ccaa,dE,dA,dpc,pE,ppa,ppc) {
     
